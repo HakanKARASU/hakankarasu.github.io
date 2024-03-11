@@ -15,12 +15,14 @@
         /* Additional styles for calendar */
         #calendar-container {
             position: fixed;
-            right: 0;
-            bottom: 0;
-            width: 600px; /* Adjust width as needed */
-            height: 400px; /* Adjust height as needed */
+            right: 10px; /* Slight adjustment for aesthetics */
+            bottom: 10px; /* Slight adjustment for aesthetics */
+            width: 320px; /* Adjust width as needed */
+            height: 220px; /* Adjust height as needed */
             z-index: 1000; /* Ensures visibility above other elements */
-            border: 1px solid #777; /* Optional: adds a border around the calendar */
+            border-radius: 8px; /* Rounded corners for a modern look */
+            overflow: hidden; /* Ensures the iframe content fits well */
+            box-shadow: 0 0 8px rgba(0,0,0,0.3);/* Optional: adds a border around the calendar */
         }
         #calendar-container iframe {
             width: 100%;
