@@ -11,8 +11,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+        /* Additional styles for calendar */
+        #calendar-container {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 300px; /* Adjust width as needed */
+            height: 200px; /* Adjust height as needed */
+            z-index: 1000; /* Ensures visibility above other elements */
+            border: 1px solid #777; /* Optional: adds a border around the calendar */
+        }
+        #calendar-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 	</head>
 	<body class="is-preload">
+		<div id="calendar-container">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FIstanbul&bgcolor=%23ffffff&hl=en_GB&showTitle=0&src=aGFrYW5tLm05N0BnbWFpbC5jb20&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ODJiZTMyZjBkMDNmZTZhYzU4MzUzNGNiMTBkZDc5MTljMDJkZmRlYzUxMDI2NTMwZmE4NzYxMjYwMjZiNjA4ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=dHIudHVya2lzaCNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23039BE5&color=%2333B679&color=%23E4C441&color=%230B8043" style="border:solid 1px #777" width="300" height="200" frameborder="0" scrolling="no"></iframe>
+    		</div>
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
