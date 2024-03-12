@@ -46,6 +46,9 @@
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
 					</div>
+				<div id="search-box" style="text-align:center; margin-top: 20px;">
+                        <input type="text" id="search-input" placeholder="Search projects..." />
+                    										</div>
 
 				<!-- Header -->
 					<header id="header">
@@ -152,6 +155,21 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		<script>
+                    document.getElementById('search-input').addEventListener('input', function(e) {
+                        var searchValue = e.target.value.toLowerCase();
+                        var articles = document.getElementById('main').getElementsByTagName('article');
+
+                        for (var i = 0; i < articles.length; i++) {
+                            var article = articles[i];
+                            if (article.innerText.toLowerCase().includes(searchValue)) {
+                                article.style.display = ''; // Show the article if it matches.
+                            } else {
+                                article.style.display = 'none'; // Hide the article if it doesn't match.
+                            }
+                        }
+                    });
+                </script>
 
 	</body>
 </html>
