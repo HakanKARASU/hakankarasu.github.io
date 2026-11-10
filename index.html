@@ -31,6 +31,39 @@
             width: 100%;
             height: 100%;
         }
+
+        /* Edge AI content: scoped to the original Massively layout. */
+        #edge-ai { scroll-margin-top: 2rem; }
+        #main > #edge-ai.post { padding: 4rem; }
+        #edge-ai .major { margin-bottom: 2.5rem; }
+        #main > #edge-ai.post header.major h2 { font-size: 2.6rem; }
+        #edge-ai .edge-intro { max-width: 54rem; margin: 0 auto; }
+        #edge-ai .edge-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; margin: 2.5rem 0; }
+        #edge-ai .edge-benefits h3 { font-size: 0.95rem; margin-bottom: 0.7rem; }
+        #edge-ai .edge-benefits p { font-size: 0.86rem; line-height: 1.9; margin: 0; text-align: left; }
+        #edge-ai .edge-columns { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; border-top: 2px solid #eeeeee; padding-top: 2.5rem; }
+        #edge-ai .edge-roadmap { padding-left: 1.35rem; margin-bottom: 0; }
+        #edge-ai .edge-roadmap li { padding-left: 0.5rem; margin-bottom: 1.2rem; }
+        #edge-ai .edge-roadmap strong { display: block; font-family: "Source Sans Pro", Helvetica, sans-serif; font-size: 1rem; letter-spacing: 0.03em; }
+        #edge-ai .edge-roadmap p, #edge-ai .edge-timing p { font-size: 0.85rem; line-height: 1.9; text-align: left; margin-bottom: 1rem; }
+        #edge-ai .edge-budget { width: 100%; margin: 1.25rem 0; font-size: 0.8rem; }
+        #edge-ai .edge-budget caption { text-align: left; font-weight: bold; padding-bottom: 0.8rem; }
+        #edge-ai .edge-budget th, #edge-ai .edge-budget td { padding: 0.55rem 0.7rem; line-height: 1.65; }
+        #edge-ai .edge-budget th:last-child, #edge-ai .edge-budget td:last-child { text-align: right; white-space: nowrap; }
+        #edge-ai .edge-budget tfoot { font-weight: bold; border-top: 2px solid #eeeeee; }
+        #edge-ai .edge-note { font-size: 0.76rem; line-height: 1.8; color: #5a6268; }
+        #edge-ai .edge-measure { border-left: 3px solid #18bfef; padding-left: 1rem; margin-top: 1.5rem; }
+        #edge-ai .edge-measure h4 { font-size: 0.9rem; margin-bottom: 0.6rem; }
+        @media screen and (max-width: 980px) {
+            #main > #edge-ai.post { padding: 3rem 2rem; }
+            #edge-ai .edge-columns { gap: 2rem; }
+        }
+        @media screen and (max-width: 736px) {
+            #main > #edge-ai.post { padding: 2.5rem 1.5rem; }
+            #main > #edge-ai.post header.major h2 { font-size: 2rem; }
+            #edge-ai .edge-benefits, #edge-ai .edge-columns { grid-template-columns: 1fr; gap: 1.6rem; }
+        }
+
     </style>
 	</head>
 	<body class="is-preload">
@@ -44,7 +77,7 @@
 				<!-- Intro -->
 					<div id="intro">
 						<h1>Innovating Solutions</h1>
-						<p>As a AI Engineer and Data Scientist, I specialize in leveraging R, SQL, and Python to innovate solutions and optimize processes. My portfolio showcases a variety of projects from predictive modeling and data analysis to automation and machine learning applications. Explore my work to see how I apply deep technical expertise and a problem-solving mindset to drive improvements in the mechanical and electrochemical domains.</p>
+						<p>As an AI Engineer and Data Scientist, I specialize in leveraging R, SQL, and Python to innovate solutions and optimize processes. My current focus includes deploying AI models on edge devices, with attention to inference time, memory use, and prediction quality. Explore my work to see how I apply deep technical expertise and a problem-solving mindset to drive improvements in the mechanical and electrochemical domains.</p>
 						<!-- Personalized wisdom quote added here -->
                         			<blockquote>"Previously, I thought intelligence alone could reshape the world. Now, wisdom has taught me the power lies in transforming myself."</blockquote>
 						<ul class="actions">
@@ -73,7 +106,7 @@
                         <li><a href="PROJECT1.html">PROJET1</a></li>
                         <li><a href="PROJECT3.html">PROJECT3</a></li>
 			<li><a href="PROJECT4.html">PROJECT4</a></li>
-			<li><a href="TEAM.html">Team</a></li>
+			<li><a href="#edge-ai">Edge AI</a></li>
 			    
                     </ul>
                     <ul class="icons">
@@ -97,6 +130,62 @@
 								<a href="#" class="image main"><img src="images/Hakan_profile_2.jpg" alt="" /></a>
 								
 							</article>
+
+
+                        <!-- Edge AI: deployment roadmap and inference timing -->
+                        <article class="post" id="edge-ai" aria-labelledby="edge-ai-title">
+                            <header class="major">
+                                <h2 id="edge-ai-title">Edge AI<br />From model to local decision</h2>
+                                <p class="edge-intro">Edge AI runs a trained model on hardware close to the sensor or machine.
+                                My focus is turning models into useful local predictions while balancing response time,
+                                prediction quality, memory, and power.</p>
+                            </header>
+
+                            <div class="edge-benefits">
+                                <div><h3>Timely local response</h3><p>Process data near the machine, avoiding a network round trip for every prediction.</p></div>
+                                <div><h3>Less network dependence</h3><p>Keep local inference available when a remote connection is slow or unavailable.</p></div>
+                                <div><h3>Less data to transfer</h3><p>Process raw measurements locally and send selected results when needed.</p></div>
+                            </div>
+
+                            <div class="edge-columns">
+                                <section aria-labelledby="edge-roadmap-title">
+                                    <h3 id="edge-roadmap-title">Deployment roadmap</h3>
+                                    <ol class="edge-roadmap">
+                                        <li><strong>Define the task and deadline</strong><p>Choose the input, output, acceptable prediction error, and maximum response time.</p></li>
+                                        <li><strong>Train and validate a baseline</strong><p>Test on held-out experiments. Keep the same input preparation when moving to the device.</p></li>
+                                        <li><strong>Prepare the model for the edge</strong><p>Export to a supported runtime, such as ONNX and TensorRT on compatible NVIDIA hardware. Compare precision and model size, then recheck accuracy.</p></li>
+                                        <li><strong>Connect the complete pipeline</strong><p>Integrate acquisition, preprocessing, inference, and output handling. Start with one sample per inference for a single monitoring stream.</p></li>
+                                        <li><strong>Benchmark and refine</strong><p>Test on the target device under sustained load. Record latency, memory use, power settings, temperature, and prediction quality.</p></li>
+                                    </ol>
+                                </section>
+
+                                <section class="edge-timing" aria-labelledby="edge-timing-title">
+                                    <h3 id="edge-timing-title">Inference time matters</h3>
+                                    <p><strong>Model inference</strong> measures the model execution.
+                                    <strong>Full response time</strong> also includes input acquisition, transfer,
+                                    preprocessing, waiting in queues, and output handling.</p>
+                                    <table class="edge-budget">
+                                        <caption>Example: 10 updates per second<br />100 ms available between updates</caption>
+                                        <thead><tr><th scope="col">Stage</th><th scope="col">Allocation</th></tr></thead>
+                                        <tbody>
+                                            <tr><td>Input acquisition and transfer</td><td>20 ms</td></tr>
+                                            <tr><td>Preprocessing</td><td>10 ms</td></tr>
+                                            <tr><td>Model inference</td><td>30 ms</td></tr>
+                                            <tr><td>Postprocessing and output</td><td>10 ms</td></tr>
+                                            <tr><td>Timing reserve</td><td>30 ms</td></tr>
+                                        </tbody>
+                                        <tfoot><tr><td>Total update budget</td><td>100 ms</td></tr></tfoot>
+                                    </table>
+                                    <p class="edge-note">Illustrative design allocations only. Actual timings must be measured on the selected model, device, and application.</p>
+                                    <div class="edge-measure">
+                                        <h4>What I would measure</h4>
+                                        <p>After warm-up, report the median (p50), p95 latency, and deadline-miss rate.
+                                        Measure inference and the full pipeline separately; record startup time separately too.</p>
+                                        <p class="edge-note">p95 means 95% of measured responses finish within that time. It is not a worst-case guarantee.</p>
+                                    </div>
+                                </section>
+                            </div>
+                        </article>
 
 						<!-- Posts -->
 							<section class="posts">
